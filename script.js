@@ -76,18 +76,18 @@ else {
       similarity_boost: 0.75
     };
 
-  // const response = await fetch("https://api.elevenlabs.io/v1/text-to-speech/EXAVITQu4vr4xnSDxMaL", {
-  //   method: "POST",
-  //   headers: {
-  //     "accept": "audio/mpeg",
-  //     "xi-api-key": "sk_f7676db50b17c48b5a0120cb0020c015b05473ba5d9cf679",
-  //     "Content-Type": "application/json"
-  //   },
-  //   body: JSON.stringify({
-  //     text,
-  //     voice_settings: voiceSettings
-  //   })
-  // });
+  const response = await fetch("https://api.elevenlabs.io/v1/text-to-speech/EXAVITQu4vr4xnSDxMaL", {
+    method: "POST",
+    headers: {
+      "accept": "audio/mpeg",
+      "xi-api-key": "sk_f7676db50b17c48b5a0120cb0020c015b05473ba5d9cf679",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      text,
+      voice_settings: voiceSettings
+    })
+  });
 
   const audioBlob = await response.blob();
   const audioUrl = URL.createObjectURL(audioBlob);
